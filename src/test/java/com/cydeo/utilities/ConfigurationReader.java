@@ -18,7 +18,7 @@ public class ConfigurationReader {
 
             file.close();
         } catch (IOException e) {
-            System.out.println("Filenot fount in the configuration.feature");
+            System.out.println("File not found in the configuration.feature");
             e.printStackTrace();
         }
 

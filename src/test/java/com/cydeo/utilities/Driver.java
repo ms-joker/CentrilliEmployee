@@ -15,6 +15,32 @@ public class Driver {
 
     public static WebDriver getDriver(){
 
+        /**
+         *
+         * option.addArguments("--remote-allow-origins=*");
+         * if (driver == null){
+         *      if(System.getProperty("BROWSER"==null){
+         *          browser = ConfigurationReader.getProperty("browser");
+         *      } else {
+         *          browser = System.getProperty("BROWSER")
+         *      }
+         *      System.out.println("Broswer: " + browser );
+         *      switch(browser){
+         *          case "remote-chrome":
+         *              try {
+         *                  String gridAddress = ""     //ip address
+         *                  URL url = URL("https://" + gridAddress + ":4444/wd/hub");
+         *                  DesiredCapabilities desiredCapabilities = new De
+         *                  desiredCapabilites.setBrowserName("chrome");
+         *                  driver = new RemoteWebDriver(url, desiredCapabilities);
+         *              } catch (Exception e){
+         *                  e.printStackTrace();
+         *              }
+         *
+         *
+         *
+         */
+
         if (driver == null){
 
             String browser = ConfigurationReader.getProperty("browser");
