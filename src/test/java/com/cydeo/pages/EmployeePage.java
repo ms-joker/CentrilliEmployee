@@ -13,9 +13,6 @@ public class EmployeePage {
     @FindBy(xpath = "//button[@accesskey='c']")
     public WebElement createBtn;
 
-    @FindBy(xpath = "//input[@placeholder='Search...']")
-    public WebElement searchInput;
-
     @FindBy(xpath = "//a[@data-menu='157']")
     public WebElement employeeMenu;
 
@@ -38,12 +35,17 @@ public class EmployeePage {
     @FindBy(xpath = "//button[@accesskey='j']")
     public WebElement discardBtn;
 
-    @FindBy(xpath = "//div[@class='modal-dialog']//button[1]")
-    public WebElement alertOkBtn;
-
     @FindBy(xpath = "//p[.='Employee created']")
     public WebElement employeeCreated;
 
+    @FindBy(xpath = "//button[@accesskey='k']")
+    public WebElement kanbanBtn;
+
+    @FindBy(xpath = "//button[@accesskey='l']")
+    public WebElement listBtn;
+
+    @FindBy(xpath = "//input[@class='o_searchview_input']")
+    public WebElement searchBox;
 
 
 }

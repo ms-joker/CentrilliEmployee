@@ -1,28 +1,38 @@
 Feature: centrilli Employee functionality
   Story: tests Employee functionalities of qa.centrilli.com as a tester
 
+  Background: user logged ın as posmanager
+
+    Given user go to employee page
+
   Scenario: Create new employee
-    Given user logged in as posmanager
-    When user in employee page
+    When user click create button
     Then user should be able to create employee
-    And user can see Employee Created message at the bottom
-    #And user should see title as New Employee
 
   Scenario: Can cancel creating by clicking discard button
-    When user in employee page
-    Then user click Discard button to cancel
+    When user click discard button
+    Then user can cancel creating
 
-  #Scenario: Cannot create without typing name;
-  #  Then user should not creating employee without typing name
+  Scenario: Cannot create without typing name;
+    When user click save without entering employee name
+    Then user should not creating employee
 
-# Scenario: Page title is new employee after created new employee
-#    Then user should see title as New Employee
+  Scenario: Page title is new employee after created new employee
+    When user click create button
+    Then user should see title as New Employee
 
-#  Scenario: Can see Employee Created message
-  #  Then user can see Employee Created message at the bottom
+  Scenario: Can see Employee Created message
+    When user click create button
+    Then user can see Employee Created message at the bottom
 
-  #Scenario: Find new employee by using search box
-  #  Then user can locate the new employee created by search
+  Scenario: Find new employee by using search box
+    When user search the employee
+    Then user can locate the new employee created by search
 
-  #Scenario: Display can be changed between Kanban and List
-  #  Then user can change the display between Kanban and List
+  Scenario: Display can be changed to Kanban
+    When user click kanban icon
+    Then user can see the table as kanban
+
+  Scenario: Display can be changed to List
+    When user click list icon
+    Then user can see the table as list
