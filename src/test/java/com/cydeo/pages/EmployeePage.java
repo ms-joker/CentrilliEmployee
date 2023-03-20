@@ -26,6 +26,7 @@ public class EmployeePage {
     public WebElement toggleBtn;
 
     @FindBy(xpath = "//input[@name='name']")
+//    @FindBy(xpath = "//input[@id='o_field_input_1197']")
     public WebElement employeeName;
 
     @FindBy(xpath = "//button[@accesskey='s']")
@@ -36,7 +37,12 @@ public class EmployeePage {
 
     @FindBy(xpath = "//button[@accesskey='j']")
     public WebElement discardBtn;
-    
+
+    @FindBy(xpath = "//div[@class='modal-dialog']//button[1]")
+    public WebElement alertOkBtn;
+
+    @FindBy(xpath = "//p[.='Employee created']")
+    public WebElement employeeCreated;
 
 
 
