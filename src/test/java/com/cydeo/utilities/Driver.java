@@ -36,6 +36,21 @@ public class Driver {
          *              } catch (Exception e){
          *                  e.printStackTrace();
          *              }
+         *              break;
+         *          case "chrome":
+         *              WebDriverManager.chromedriver().setup();
+         *              driver = new ChromeDriver(option);
+         *              break;
+         *          case "chrome-headless":
+         *              WebDriverManager.chromedriver().setup();
+         *              driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
+         *              break;
+         *          case "fire-fox":
+         *              WebDriverManager.firefoxdriver().setup();
+         *              driver = new FirefoxDriver(option);
+         *              break;
+         *       }
+         *
          *
          *
          *
