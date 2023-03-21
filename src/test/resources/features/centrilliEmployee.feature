@@ -36,3 +36,7 @@ Feature: centrilli Employee functionality
   Scenario: Display can be changed to List
     When user click list icon
     Then user can see the table as list
+
+    Scenario: all Employee number increased one
+      When user click create button
+      Then number of employees increased one

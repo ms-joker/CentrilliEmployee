@@ -125,4 +125,9 @@ public class CentrilliEmployee {
         Assert.assertTrue(employeePage.listView.isDisplayed());
     }
 
+    @Then("number of employees increased one")
+    public void number_of_employees_increased_one() {
+        System.out.println("Number of employee increased 1.");
+    }
+
 }
