@@ -1,7 +1,7 @@
 Feature: centrilli Employee functionality
   Story: tests Employee functionalities of qa.centrilli.com as a tester
 
-  Background: user logged ın as posmanager
+  Background: user logged in as posmanager
 
     Given user go to employee page
 

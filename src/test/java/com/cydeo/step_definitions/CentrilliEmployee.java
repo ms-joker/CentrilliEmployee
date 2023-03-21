@@ -9,13 +9,13 @@ import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Wait;
 
+import java.lang.reflect.Array;
+
 public class CentrilliEmployee {
 
     public WebDriver driver = Driver.getDriver();
     LoginPage loginPage = new LoginPage();
     EmployeePage employeePage = new EmployeePage();
-
-
 
     @Given("user go to employee page")
     public void user_go_to_employee_page() throws InterruptedException {
@@ -97,34 +97,32 @@ public class CentrilliEmployee {
 
     @When("user search the employee")
     public void user_search_the_employee() {
-        employeePage.searchBox.sendKeys("John_Wick" + Keys.ENTER);
-        System.out.println("User enter a name ");
+        employeePage.searchBox.sendKeys(ConfigurationReader.getProperty("newEmployee") + Keys.ENTER);
     }
     @Then("user can locate the new employee created by search")
     public void user_can_locate_the_new_employee_created_by_search() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        //Assert noContent page is displayed or not.
+        Assert.assertTrue(employeePage.results.isDisplayed());
     }
 
-
     @When("user click kanban icon")
-    public void user_click_kanban_icon() {
-        System.out.println("User clicked the 'Kanban' button.");
+    public void user_click_kanban_icon() throws InterruptedException {
+        employeePage.kanbanBtn.click();
+        Thread.sleep(1500);
     }
     @Then("user can see the table as kanban")
     public void user_can_see_the_table_as_kanban() {
-        System.out.println("User can see the kanban");
+        Assert.assertTrue(employeePage.kanbanView.isDisplayed());
     }
 
     @When("user click list icon")
-    public void user_click_list_icon() {
-        System.out.println("User clicked the 'List' button.");
+    public void user_click_list_icon() throws InterruptedException {
+        employeePage.listBtn.click();
+        Thread.sleep(1500);
     }
     @Then("user can see the table as list")
     public void user_can_see_the_table_as_list() {
-        System.out.println("User can see the list.");
+        Assert.assertTrue(employeePage.listView.isDisplayed());
     }
-
-
 
 }

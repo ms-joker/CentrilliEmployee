@@ -47,5 +47,13 @@ public class EmployeePage {
     @FindBy(xpath = "//input[@class='o_searchview_input']")
     public WebElement searchBox;
 
+    @FindBy(xpath = "//div[contains(@class,'o_kanban_view')]")
+    public WebElement kanbanView;
+
+    @FindBy(xpath = "//div[@class='table-responsive']")
+    public WebElement listView;
+
+    @FindBy(xpath = "//div[contains(@class,'o_kanban_record')]")
+    public WebElement results;
 
 }
