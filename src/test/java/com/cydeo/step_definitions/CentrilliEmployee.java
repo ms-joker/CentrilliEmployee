@@ -17,6 +17,8 @@ public class CentrilliEmployee {
     LoginPage loginPage = new LoginPage();
     EmployeePage employeePage = new EmployeePage();
 
+    String numEmployee;
+
     @Given("user go to employee page")
     public void user_go_to_employee_page() throws InterruptedException {
         driver.get(ConfigurationReader.getProperty("centrilliUrl"));
@@ -38,6 +40,7 @@ public class CentrilliEmployee {
             }
         }
         Thread.sleep(3000);
+        numEmployee = employeePage.numEmp.getText();
     }
     @When("user click create button")
     public void user_click_create_button() throws InterruptedException {
@@ -127,7 +130,10 @@ public class CentrilliEmployee {
 
     @Then("number of employees increased one")
     public void number_of_employees_increased_one() {
-        System.out.println("Number of employee increased 1.");
+        employeePage.employees.click();
+        String num1 = employeePage.numEmp.getText();
+        Assert.assertEquals(Integer.parseInt(numEmployee)+1, Integer.parseInt(num1) );
+        //System.out.println("Number of employee increased 1.");
     }
 
 }

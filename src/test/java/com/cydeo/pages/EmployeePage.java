@@ -56,4 +56,11 @@ public class EmployeePage {
     @FindBy(xpath = "//div[contains(@class,'o_kanban_record')]")
     public WebElement results;
 
+    @FindBy(xpath = "//span[@class='o_pager_limit']")
+    public WebElement numEmp;
+
+    @FindBy(xpath="//div[contains(@class, 'pager')]//span[contains(@class, 'limit')]")
+    public WebElement employees;
+
+
 }
